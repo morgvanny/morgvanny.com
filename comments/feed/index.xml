@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments for Morgan VanYperen	</title>
+	<atom:link href="/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>this is a blog by Morgan VanYperen</description>
+	<lastBuildDate>Mon, 23 May 2016 21:26:57 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.1</generator>
+	<item>
+		<title>
+		Comment on I made a ruby cli gem by lukeghenco		</title>
+		<link>/made-ruby-cli-gem/#comment-1</link>
+
+		<dc:creator><![CDATA[lukeghenco]]></dc:creator>
+		<pubDate>Mon, 25 Jan 2016 02:48:17 +0000</pubDate>
+		<guid isPermaLink="false">https://morgvanny.com/?p=10#comment-1</guid>
+
+					<description><![CDATA[Good job. Your code looks great.]]></description>
+			<content:encoded><![CDATA[<p>Good job. Your code looks great.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

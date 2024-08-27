@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Ruby Archives - Morgan VanYperen</title>
+	<atom:link href="/category/ruby/feed/" rel="self" type="application/rss+xml" />
+	<link>/category/ruby/</link>
+	<description>this is a blog by Morgan VanYperen</description>
+	<lastBuildDate>Mon, 23 May 2016 22:40:20 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.1</generator>
+	<item>
+		<title>I made a sinatra app</title>
+		<link>/made-sinatra-app/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Mon, 18 Apr 2016 03:26:44 +0000</pubDate>
+				<category><![CDATA[Ruby]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=27</guid>
+
+					<description><![CDATA[<p>I just turned in my second project with Learn Verified yesterday, and now it&#8217;s time for another sweet, sweet blog post. The project was to build a sinatra app. Sinatra is a really...</p>
+<p>The post <a href="/made-sinatra-app/">I made a sinatra app</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I just turned in my second project with <a href="http://learn.co/verified" target="_blank">Learn Verified</a> yesterday, and now it&#8217;s time for another sweet, sweet blog post. The project was to build a sinatra app. Sinatra is a really cool ruby gem &#8211; like what I made before, but wayyyy, wayyyy more advanced and useful. It provides some really simple tools that allow you to use ruby to create a website. A more well-known tool for this sort of thing is Ruby on Rails &#8211; I&#8217;m learning that next. Sinatra is sort of like a much lighter, more basic tool that performs the same general function. Basically, if I were to throw my code onto a server that was configured to run rack-based apps, it would be an actual website anyone could use. A lot more user-friendly and accessible than my previous project, which required someone to download and install, and run the gem in a terminal, with ruby already installed.</p>
+<p>Most of the lessons within Learn tend to stick to just a few different domain models. In other words, they tend to be based on the same few subjects, or contexts. More info on what that means <a href="https://en.wikipedia.org/wiki/Domain_model" target="_blank">here</a>. For example, many of the beginning Ruby principles were taught within the context of displaying a tic-tac-toe board, and eventually being able to play it, and then finally creating an unbeatable tic-tac-toe AI opponent. There have been several other domain models I&#8217;ve used with them, but they like to stick to a few, so we can really see progress on what we can do within a similar context, as we learn more and more coding skills. With that in mind, I decided to stick to a similar domain model to my cli gem, and made a sinatra app for managing D&#038;D characters and parties. This is actually something my friends and I, and potentially a lot of people, could use once I&#8217;ve got a server somewhere to host it.</p>
+<p>Realistically, I want it to have a lot more features than it currently does, and look more polished, but I want to save that stuff for when I learn rails and javascript &#8211; I&#8217;m starting rails tomorrow. In any case, I&#8217;ll still be able to re-use plenty of code for that, I&#8217;m sure. Speaking of that, <a href="https://github.com/morgvanny/sinatra-d-and-d-project" target="_blank">here&#8217;s the code</a> if you want to take a look.</p>
+<p>At the top of this post, you can see the basic structure of the sinatra app. Most of the files you see there (and one of the folders), consist of configuration files, that basically ensure the app has the tools it needs to perform its functions. They&#8217;re typically very similar between basic sinatra apps like this. In the database folder, I created a few db migrations &#8211; commands that create tables in a database, so I can store users&#8217; info permanently. That way if you quit the app, you can always come back and still have your profile, with your characters, etc.</p>
+<p>Within the app folder here, you can see I&#8217;ve set up an MVC framework:</p>
+<p><a href="https://morgvanny.com/wp-content/uploads/2016/04/MVC.png"><img fetchpriority="high" decoding="async" data-attachment-id="31" data-permalink="/made-sinatra-app/mvc/" data-orig-file="/wp-content/uploads/2016/04/MVC.png" data-orig-size="327,192" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="MVC" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2016/04/MVC-300x176.png" data-large-file="/wp-content/uploads/2016/04/MVC.png" tabindex="0" role="button" src="https://morgvanny.com/wp-content/uploads/2016/04/MVC-300x176.png" alt="MVC" width="300" height="176" class="alignnone size-medium wp-image-31" srcset="/wp-content/uploads/2016/04/MVC-300x176.png 300w, /wp-content/uploads/2016/04/MVC.png 327w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>MVC stands for Model View Controller (the names of those folders above). That framework allows me to split my code into more manageable chunks, with different responsibilities. Those controller files provide instructions that determine what page someone sees when they visit a specific URL, or click a certain link. Certain things people do are more related to their own profile, or characters, or parties, so those each have their own controllers to split responsibilities. Theoretically, all of those controllers could be combined in one file, and the models and pages could be there too, but that would be a total mess. Here are the model files:</p>
+<p><a href="https://morgvanny.com/wp-content/uploads/2016/04/models.png"><img decoding="async" data-attachment-id="32" data-permalink="/made-sinatra-app/models/" data-orig-file="/wp-content/uploads/2016/04/models.png" data-orig-size="322,119" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="models" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2016/04/models-300x111.png" data-large-file="/wp-content/uploads/2016/04/models.png" tabindex="0" role="button" src="https://morgvanny.com/wp-content/uploads/2016/04/models-300x111.png" alt="models" width="300" height="111" class="alignnone size-medium wp-image-32" srcset="/wp-content/uploads/2016/04/models-300x111.png 300w, /wp-content/uploads/2016/04/models.png 322w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>Those basically represent the ideas of users, characters, and parties, which means I can use those ideas throughout the sinatra app. They are integrated into the database using the activerecord gem. That gem lets you break down objects and store their info in a database, and then when you need them again, you can pull out that info and rebuild the object. Lastly, here are the view files:</p>
+<p><a href="https://morgvanny.com/wp-content/uploads/2016/04/views.png"><img decoding="async" data-attachment-id="33" data-permalink="/made-sinatra-app/views/" data-orig-file="/wp-content/uploads/2016/04/views.png" data-orig-size="325,407" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="views" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2016/04/views-240x300.png" data-large-file="/wp-content/uploads/2016/04/views.png" tabindex="0" role="button" src="https://morgvanny.com/wp-content/uploads/2016/04/views-240x300.png" alt="views" width="240" height="300" class="alignnone size-medium wp-image-33" srcset="/wp-content/uploads/2016/04/views-240x300.png 240w, /wp-content/uploads/2016/04/views.png 325w" sizes="(max-width: 240px) 100vw, 240px" /></a></p>
+<p>Those are .erb files, which are basically fancy HTML files that allow ruby code in them. That means I can build template pages, that display content dynamically, depending on who&#8217;s looking at the page &#8211; and I can even programmatically generate things to show on the page based on content users have created, etc. That means I have to build less pages to show a bigger variety of things &#8211; and I can build pages more quickly too!</p>
+<p>It&#8217;s tough to explain what all of this looks like from an end user&#8217;s point of view, so I&#8217;m going to create a video showing a bit of a walkthrough. I&#8217;ll update this post with it soon.<br />
+I&#8217;m really excited to have gotten this far, and am looking forward to digging into ruby on rails and javascript. I&#8217;m sure I&#8217;ll be back here at the ol&#8217; blog as soon as I&#8217;ve got a rails project done. If anyone has any suggestions for a coding topic to talk about, or anything like that, I may post again sooner than that. Thanks for reading!</p>
+<p>**UPDATE**<br />
+Here&#8217;s a link to a video, showing what the sinatra app looks like and how it behaves:</p>
+<p><iframe loading="lazy" src="https://drive.google.com/file/d/0BxPPZmtR5W43bUkzQ2x6N2x2b3M/preview" width="640" height="480" allowFullScreen="true" allowfullscreen="true"></iframe></p>
+<p>It&#8217;s blurry at that size, but it looks fine on full-screen.</p>
+<p>The post <a href="/made-sinatra-app/">I made a sinatra app</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">27</post-id>	</item>
+		<item>
+		<title>I made a ruby cli gem</title>
+		<link>/made-ruby-cli-gem/</link>
+					<comments>/made-ruby-cli-gem/#comments</comments>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Sun, 24 Jan 2016 08:44:42 +0000</pubDate>
+				<category><![CDATA[Ruby]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=10</guid>
+
+					<description><![CDATA[<p>So I&#8217;m learning a lot of web development tools right now, with Learn Verified. It&#8217;s awesome. I love programming, and I love using Ruby in particular. I&#8217;m almost done with my final Object Oriented...</p>
+<p>The post <a href="/made-ruby-cli-gem/">I made a ruby cli gem</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>So I&#8217;m learning a lot of web development tools right now, with <a href="http://learn.co/verified" target="_blank">Learn Verified</a>. It&#8217;s awesome. I love programming, and I love using Ruby in particular. I&#8217;m almost done with my final Object Oriented Ruby project &#8211; in fact &#8211; I&#8217;m in the process of turning it in. It&#8217;s definitely not finished though, like pretty much all software, but I&#8217;m looking forward to getting some much needed code review, and getting to work on some improvements.</p>
+<p>Anyway, more about the project. It&#8217;s called <a href="https://rubygems.org/gems/monster_index" target="_blank">monster_index</a>. It&#8217;s a tool for playing Dungeons and Dragons, because I&#8217;m a nerd. Basically, you can run the program, and it will list a bunch of D&amp;D monsters, and then you can go deeper and see a bunch of stats for each of those monsters. It&#8217;s all text-based, or rather, a ruby gem with a command line interface. So that means it&#8217;s a program you can download, install, run, and then use it through the terminal.</p>
+<p>No, I didn&#8217;t take the time to gather all those monster stats myself. I&#8217;m not that obsessed with D&amp;D, and that would take foreverrrrrr. I used a nice little tool called Nokogiri (a different, better ruby gem someone made) to look up all that info and sort out what I want, and embed it into my program. Lucky for me, <a href="http://www.d20srd.org/" target="_blank">this site</a> exists, and Nokogiri, under my careful instruction, goes and grabs the info from it whenever monster_index needs it.</p>
+<p>At this point, I&#8217;ve published the gem for public use (go nuts, everyone), and put the <a href="https://github.com/morgvanny/monster_index" target="_blank">source code</a> on GitHub, for all to see, and possibly collaborate with.</p>
+<p>Like I said, It&#8217;s not totally finished yet &#8211; I mean what software ever is? But really, it&#8217;s lacking a huge number of monsters, because I need to learn to use Nokogiri better, and while I appreciate that site I mentioned earlier as  a free resource, it&#8217;s not as neatly organized as I&#8217;d like it to be. Let&#8217;s get into the nitty gritty of that, because I bet you&#8217;re just on the edge of your seat, waiting to hear about this.</p>
+<p>First thing my program does is create a bunch of instances of the Monster class, based on info it can get from the Scraper class. So the Scraper class uses Nokogiri to &#8220;scrape&#8221; information off of the pages of the site. First thing it looks at is <a href="http://www.d20srd.org/indexes/monsters.htm" target="_blank">this page</a>.  Easy enough to get a list of monsters from there &#8211; I&#8217;ll just get a copy of that page&#8217;s source code with this</p><pre class="urvanov-syntax-highlighter-plain-tag">doc &lt;span class=&quot;pl-k&quot;&gt;= &lt;/span&gt;&lt;span class=&quot;pl-c1&quot;&gt;Nokogiri&lt;/span&gt;::&lt;span class=&quot;pl-c1&quot;&gt;HTML&lt;/span&gt;(open(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;http://www.d20srd.org/indexes/monsters.htm&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;))</pre><p>and then I can see they organize all the monsters into 4 columns with lists of monsters within lists of letters. basically. so I iterate through those and add all the monsters to an array like this</p><pre class="urvanov-syntax-highlighter-plain-tag">monsters = []
+ doc.search(&quot;ul.column li a&quot;).each do |monster|
+ monsters &amp;lt;&amp;lt; {
+   name: monster.text,
+   url: &quot;http://www.d20srd.org/#{monster.attr(&quot;href&quot;)}&quot;
+   }
+ end</pre><p>so, perfect, now I&#8217;ve got all the types of monster, along with the urls to see their details. now I just have to go in and grab each one&#8217;s stats. that&#8217;s where I hit a road block, because their individual pages aren&#8217;t totally standardized (the horror)! so for a lot of them, this code works just fine</p><pre class="urvanov-syntax-highlighter-plain-tag">def self.scrape_monster_page(monster_url)
+ doc = Nokogiri::HTML(open(monster_url))
+ profile = {
+   size_type: doc.search(&quot;table tr td&quot;)[0].text,
+   hit_dice: doc.search(&quot;table tr td&quot;)[1].text,
+   initiative: doc.search(&quot;table tr td&quot;)[2].text,
+   speed: doc.search(&quot;table tr td&quot;)[3].text,
+   ac: doc.search(&quot;table tr td&quot;)[4].text,
+   attack: doc.search(&quot;table tr td&quot;)[7].text,
+   alignment: doc.search(&quot;table tr td&quot;)[19].text,
+   }
+ end</pre><p>I go to that monster&#8217;s page, and grab each stat off of a table there. But then there&#8217;s a bunch of them that are organized differently. For example, &#8220;Archon.&#8221; That&#8217;s not an actual monster &#8211; it&#8217;s divided into Lantern, Trumpet, Hound, and Hound Hero types. And no, I actually don&#8217;t know what any of those are. I&#8217;ve never encountered them on my adventures through D&amp;D. Anyway, that means I don&#8217;t want to list Archon after all, because there are no stats for that. Not only that, but those other sub-types don&#8217;t have their own pages &#8211; they all have different tables on the same page. And this happens with plenty of the monsters from the original list, except sometimes, inexplicably, not only will a page have tables for multiple monsters, but they also combined multiple tables into one more complex table. While I could probably work out some exceptions to my Nokogiri instructions, there seems to be too much inconsistency for me to bother scraping all those pages in different ways.</p>
+<p>At some point, I&#8217;ll be both faster, and smarter about scraping pages, but for now, I just want to provide a quick reference on the simpler categories of monsters, without a bunch of weird sub-categories messing everything up. So I just added in a filter to basically ignore all the monsters where that was an issue, and finished up the rest of the gem, and published it.  I ended up with wayyyy fewer monsters, it turns out (D&amp;D is complicated), but still a pretty large number, and I&#8217;m happy with what I ended up with. So here we are! I&#8217;m now the author of a ruby gem.</p>
+<p>The post <a href="/made-ruby-cli-gem/">I made a ruby cli gem</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/made-ruby-cli-gem/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">10</post-id>	</item>
+	</channel>
+</rss>

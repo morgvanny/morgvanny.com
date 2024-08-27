@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>React Archives - Morgan VanYperen</title>
+	<atom:link href="/category/react/feed/" rel="self" type="application/rss+xml" />
+	<link>/category/react/</link>
+	<description>this is a blog by Morgan VanYperen</description>
+	<lastBuildDate>Tue, 05 Dec 2017 01:44:58 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.1</generator>
+	<item>
+		<title>React Just Got Better (Again)</title>
+		<link>/react-just-got-better/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Tue, 05 Dec 2017 01:44:40 +0000</pubDate>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programming]]></category>
+		<category><![CDATA[React]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=127</guid>
+
+					<description><![CDATA[<p>Last week I wrote about my favorite change that came with React version 16 &#8211; fragment support in components. I had mentioned that there were still annoying things about it, which required workarounds,...</p>
+<p>The post <a href="/react-just-got-better/">React Just Got Better (Again)</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Last week I wrote about my favorite change that came with React version 16 &#8211; fragment support in components. I had mentioned that there were still annoying things about it, which required workarounds, or ignoring warnings. As if on queue, they put out an update the next day that fixed that! Clearly they read my blog, and care about my priorities. Thanks guys.</p>
+<p>They explain the change very well <a href="https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html">here</a>. Basically, instead of putting everything into brackets as an array with commas between elements, you can now just wrap it all in what appears to be an html tag, indicating it&#8217;s a fragment. Basically, syntax is almost exactly like it was before fragments existed, but it&#8217;s not an extra div, or whatever you chose to use in the past. They have a few ways to indicate it&#8217;s a fragment, but my favorite is simply &lt;&gt; putting things within blank tags, like this &lt;/&gt;.</p>
+<p>This is really interesting to me, because while I haven&#8217;t looked into how exactly they made this work, I&#8217;m pretty sure it works about the same way as when they supported arrays &#8211; they just abstracted away a lot of the code you need to write to indicate how the fragment should be put together. In any case, I like it a lot. While it&#8217;s not anything groundbreaking, it just feels right. It&#8217;s the way things should work. So to you React devs at Facebook who definitely read my blog (lol), I am proud of you. Thanks for all you do!</p>
+<p>The post <a href="/react-just-got-better/">React Just Got Better (Again)</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">127</post-id>	</item>
+		<item>
+		<title>Contributing to Open Source</title>
+		<link>/contributing-open-source/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Mon, 16 Oct 2017 23:54:42 +0000</pubDate>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programming]]></category>
+		<category><![CDATA[React]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=103</guid>
+
+					<description><![CDATA[<p>I&#8217;ve been spending time lately, improving my skills in order to be able to make meaningful contributions to open source projects. One thing I&#8217;m trying to get better at is having better git...</p>
+<p>The post <a href="/contributing-open-source/">Contributing to Open Source</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve been spending time lately, improving my skills in order to be able to make meaningful contributions to open source projects. One thing I&#8217;m trying to get better at is having better git commit messages. I recommend <a href="https://chris.beams.io/posts/git-commit/">this excellent post</a> on writing descriptive, yet brief git commit messages. It really gets into nitty-gritty details on what makes a message good, or how bad ones can be improved.</p>
+<p>In addition to trying to generally improve the notes around my code, I also of course have to learn to code better. The project I found, that I&#8217;m working on contributing to, involves combining React and WordPress together in a pretty unique way. I have an understanding of React, and of WordPress, but I&#8217;ve never used WordPress exclusively as an API before, and I&#8217;ve never used Next.js either. Lucky for me, there is a lot of beginner documentation out there for both &#8211; and this project is still in its infancy &#8211; so there are plenty of basic things to add!</p>
+<p>To begin my process, I simply cloned the github repository, and followed the readme&#8217;s instructions for installing dependencies and launching the site in a local environment. Then I opened up the project in my text editor of choice (vscode right now) and looked it over. While I haven&#8217;t used Next.js before, everything for the front-end looked pretty familiar and intuitive based on my experience with React. I familiarized myself with the file structure, and where code and/or libraries were being imported and exported. The WordPress folder was of course, very familiar to me from my time working at Bluehost. Nothing new there.</p>
+<p>As I saw how routing was working on the front-end, I knew I&#8217;d need to study more about Next.js if I want to help add components to display pages and posts. That seemed the most obvious thing to add at this point, but it was still unclear to me how to build that out. <a href="https://learnnextjs.com/">Here is where</a> I went to learn to how Next.js works, and how I can add to the project. It&#8217;s really nice because it even has a section for creating dynamic pages &#8211; exactly what I want to be able to do when creating a custom react front-end for WordPress. Now that I have a pretty good understanding of how that works, I should be able to get started following that pattern, and document my work properly with git commit messages. The next tricky part is figuring out what urls to use to fetch the data from WordPress, and make sure the links all work properly. More on this to come.</p>
+<p>The post <a href="/contributing-open-source/">Contributing to Open Source</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">103</post-id>	</item>
+	</channel>
+</rss>

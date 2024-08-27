@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+
+	<head>
+		
+		<meta http-equiv="content-type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="profile" href="//gmpg.org/xfn/11">
+
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+
+	<!-- This site is optimized with the Yoast SEO plugin v23.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>I made a React app and a Rails API - Morgan VanYperen</title>
+	<link rel="canonical" href="/made-react-app-rails-api/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="I made a React app and a Rails API - Morgan VanYperen">
+	<meta property="og:description" content="I&#8217;ve finished my final portfolio project in the Flatiron School&#8217;s full stack web development curriculum! It&#8217;s satisfying to be able to say that. Since the emphasis on this project was to use React/Redux,...">
+	<meta property="og:url" content="/made-react-app-rails-api/">
+	<meta property="og:site_name" content="Morgan VanYperen">
+	<meta property="article:published_time" content="2017-09-08T00:27:39+00:00">
+	<meta name="author" content="morgvanny">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="morgvanny">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="5 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{
+	    "@context": "https://schema.org",
+	    "@graph": [
+	        {
+	            "@type": "Article",
+	            "@id": "/made-react-app-rails-api/#article",
+	            "isPartOf": {
+	                "@id": "/made-react-app-rails-api/"
+	            },
+	            "author": {
+	                "name": "morgvanny",
+	                "@id": "/#/schema/person/c6c9f5caf136d3b08f69fa0023cb1ee1"
+	            },
+	            "headline": "I made a React app and a Rails API",
+	            "datePublished": "2017-09-08T00:27:39+00:00",
+	            "dateModified": "2017-09-08T00:27:39+00:00",
+	            "mainEntityOfPage": {
+	                "@id": "/made-react-app-rails-api/"
+	            },
+	            "wordCount": 966,
+	            "commentCount": 0,
+	            "publisher": {
+	                "@id": "/#/schema/person/c6c9f5caf136d3b08f69fa0023cb1ee1"
+	            },
+	            "articleSection": [
+	                "Programming"
+	            ],
+	            "inLanguage": "en-US",
+	            "potentialAction": [
+	                {
+	                    "@type": "CommentAction",
+	                    "name": "Comment",
+	                    "target": [
+	                        "/made-react-app-rails-api/#respond"
+	                    ]
+	                }
+	            ]
+	        },
+	        {
+	            "@type": "WebPage",
+	            "@id": "/made-react-app-rails-api/",
+	            "url": "/made-react-app-rails-api/",
+	            "name": "I made a React app and a Rails API - Morgan VanYperen",
+	            "isPartOf": {
+	                "@id": "/#website"
+	            },
+	            "datePublished": "2017-09-08T00:27:39+00:00",
+	            "dateModified": "2017-09-08T00:27:39+00:00",
+	            "breadcrumb": {
+	                "@id": "/made-react-app-rails-api/#breadcrumb"
+	            },
+	            "inLanguage": "en-US",
+	            "potentialAction": [
+	                {
+	                    "@type": "ReadAction",
+	                    "target": [
+	                        "/made-react-app-rails-api/"
+	                    ]
+	                }
+	            ]
+	        },
+	        {
+	            "@type": "BreadcrumbList",
+	            "@id": "/made-react-app-rails-api/#breadcrumb",
+	            "itemListElement": [
+	                {
+	                    "@type": "ListItem",
+	                    "position": 1,
+	                    "name": "Home",
+	                    "item": "/"
+	                },
+	                {
+	                    "@type": "ListItem",
+	                    "position": 2,
+	                    "name": "I made a React app and a Rails API"
+	                }
+	            ]
+	        },
+	        {
+	            "@type": "WebSite",
+	            "@id": "/#website",
+	            "url": "/",
+	            "name": "Morgan VanYperen",
+	            "description": "this is a blog by Morgan VanYperen",
+	            "publisher": {
+	                "@id": "/#/schema/person/c6c9f5caf136d3b08f69fa0023cb1ee1"
+	            },
+	            "potentialAction": [
+	                {
+	                    "@type": "SearchAction",
+	                    "target": {
+	                        "@type": "EntryPoint",
+	                        "urlTemplate": "/?s={search_term_string}"
+	                    },
+	                    "query-input": "required name=search_term_string"
+	                }
+	            ],
+	            "inLanguage": "en-US"
+	        },
+	        {
+	            "@type": [
+	                "Person",
+	                "Organization"
+	            ],
+	            "@id": "/#/schema/person/c6c9f5caf136d3b08f69fa0023cb1ee1",
+	            "name": "morgvanny",
+	            "image": {
+	                "@type": "ImageObject",
+	                "inLanguage": "en-US",
+	                "@id": "/#/schema/person/image/",
+	                "url": "http://0.gravatar.com/avatar/c327466a671460df64f340a1eba7717a?s=96&d=mm&r=g",
+	                "contentUrl": "http://0.gravatar.com/avatar/c327466a671460df64f340a1eba7717a?s=96&d=mm&r=g",
+	                "caption": "morgvanny"
+	            },
+	            "logo": {
+	                "@id": "/#/schema/person/image/"
+	            },
+	            "url": "/author/morgvanny/"
+	        }
+	    ]
+	}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//v0.wordpress.com">
+<link rel="alternate" type="application/rss+xml" title="Morgan VanYperen &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Morgan VanYperen &raquo; Comments Feed" href="/comments/feed/">
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.0.1 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+		<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+					<!-- No tracking code set -->
+				<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="urvanov_syntax_highlighter-css" href="/wp-content/plugins/urvanov-syntax-highlighter/css/min/urvanov_syntax_highlighter.min.css?ver=2.8.37" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-classic-css" href="/wp-content/plugins/urvanov-syntax-highlighter/themes/classic/classic.css?ver=2.8.37" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="/wp-content/plugins/urvanov-syntax-highlighter/fonts/monaco.css?ver=2.8.37" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.6.1" type="text/css" media="all">
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.6.1" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #333;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--accent: #00A0D7;--wp--preset--color--dark-gray: #555;--wp--preset--color--medium-gray: #777;--wp--preset--color--light-gray: #999;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 16px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 24px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 18px;--wp--preset--font-size--larger: 27px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="sharedaddy-css" href="/wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=13.7" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=13.7" type="text/css" media="all">
+<link rel="stylesheet" id="iwata_googleFonts-css" href="/wp-content/themes/iwata/assets/css/fonts.css?ver=6.6.1" type="text/css" media="all">
+<link rel="stylesheet" id="iwata_fontawesome-css" href="/wp-content/themes/iwata/assets/fonts/fa/css/font-awesome.css?ver=6.6.1" type="text/css" media="all">
+<link rel="stylesheet" id="iwata_style-css" href="/wp-content/themes/iwata/style.css?ver=2.1.1" type="text/css" media="all">
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="urvanov_syntax_highlighter_js-js-extra">
+/* <![CDATA[ */
+var UrvanovSyntaxHighlighterSyntaxSettings = {"version":"2.8.37","is_admin":"0","ajaxurl":"\/wp-admin\/admin-ajax.php","prefix":"urvanov-syntax-highlighter-","setting":"urvanov-syntax-highlighter-setting","selected":"urvanov-syntax-highlighter-setting-selected","changed":"urvanov-syntax-highlighter-setting-changed","special":"urvanov-syntax-highlighter-setting-special","orig_value":"data-orig-value","debug":""};
+var UrvanovSyntaxHighlighterSyntaxStrings = {"copy":"Copied to the clipboard","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/urvanov-syntax-highlighter/js/min/urvanov_syntax_highlighter.min.js?ver=2.8.37" id="urvanov_syntax_highlighter_js-js"></script>
+<script type="text/javascript" src="/wp-content/themes/iwata/assets/js/doubletaptogo.js?ver=6.6.1" id="iwata_doubletap-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/posts/90">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.1">
+<link rel="shortlink" href="/?p=90">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=%2Fmade-react-app-rails-api%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=%2Fmade-react-app-rails-api%2F#038;format=xml">
+	<style>img#wpstats{display:none}</style>
+			
+	</head>
+	
+	<body class="post-template-default single single-post postid-90 single-format-standard">
+
+		
+		<a class="skip-link button" href="#site-content">Skip to the content</a>
+	
+		<header class="header section">
+			
+			<div class="cover bg-accent"></div>
+		
+			<div class="section-inner group">
+						
+							
+					<h2 class="blog-title">
+						<a rel="home">Morgan VanYperen</a>
+					</h2>
+					
+								
+				<button type="button" class="search-toggle">
+					<span class="fa fw fa-search"></span>
+					<span class="screen-reader-text">Click to view the search field</span>
+				</button>
+				
+				<button type="button" class="nav-toggle hidden">
+					<span class="screen-reader-text">Click to view the navigation</span>
+					<div class="bars">
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+					</div>
+				</button><!-- .nav-toggle -->
+				
+				<ul class="main-menu">
+					
+					<li id="menu-item-60" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60"><a href="https://morgvanny.com/">Home</a></li>
+<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="/morgan-vanyperen/">About Morgan VanYperen</a></li>
+					
+				 </ul>
+<!-- .main-menu -->
+			
+			</div>
+<!-- .section-inner -->
+							
+		</header><!-- .header -->
+		
+		<form method="get" class="header-search section hidden" action="/">
+			<div class="section-inner">
+				<input class="search-field" type="search" placeholder="Type and press enter" name="s"> 
+				<button type="submit" class="screen-reader-text">Search</button>
+			</div>
+<!-- .section-inner -->
+		</form>
+<!-- .header-search -->
+		
+		<ul class="mobile-menu hidden">			
+			
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60"><a href="https://morgvanny.com/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="/morgan-vanyperen/">About Morgan VanYperen</a></li>
+			
+		</ul>
+<!-- .mobile-menu -->
+		
+		<form method="get" class="mobile-search section hidden" action="/">
+			<input class="search-field" type="search" placeholder="Type and press enter" name="s"> 
+			<a class="search-button" onclick="document.getElementById( 'search-form' ).submit(); return false;"><span class="fa fw fa-search"></span></a>
+		</form>
+<!-- .mobile-search -->
+
+		<main id="site-content">
+<div class="section content">
+	
+	<div class="section-inner">
+											        
+					
+				<div id="post-90" class="single post-90 post type-post status-publish format-standard hentry category-programming">
+
+										
+					<div class="post-header">
+						
+						<h1 class="post-title">I made a React app and a Rails API</h1>
+				
+			<div class="post-meta">
+					
+								
+									<p class="post-date"><a href="/made-react-app-rails-api/"><span class="fa fw fa-calendar"></span>September 8, 2017</a></p>
+								
+								
+								
+			</div>
+<!-- .post-meta -->
+			
+											
+					</div>
+<!-- .post-header -->
+					
+					<div class="post-content entry-content">
+						<p>I&#8217;ve finished my final portfolio project in the Flatiron School&#8217;s full stack web development curriculum! It&#8217;s satisfying to be able to say that. Since the emphasis on this project was to use React/Redux, I decided to do something a little more interactive than my previous projects &#8211; a typing wpm tester. Rather than having the user simply enter information to be stored and displayed, the user now picks a team, takes a test, and is scored &#8211; and they can see the top scores and some general stats on test results.</p>
+<p>I started out by creating a simple Rails app that can create, store, and spit out test results via JSON. Basically it handles the preservation of data when wpm tests are taken, and then sends that raw data back out upon request. Then I used React and Redux to handle the rest &#8211; actually administrating the wpm test, sending the results to the rails API, and then fetching information from that API to show stats involving previous tests.</p>
+<p>Since both parts are really doing separate, succinct jobs, they are running on different ports and out of different folders, as opposed to my previous projects consisting of stand-alone apps. However, neither one is very useful without the other, so they have to be able to talk to each other. To set this up, I not only needed to have the react app making asynchronous requests properly, but I also needed to make sure the Rails API accepted the requests as valid &#8211; because the requests come from a different origin than the server/port the rails API runs on. I learned about a gem called &#8216;rack-cors&#8217; that  can be used in Rails, which adds an initialization file called cors.rb that could ensure that the API accepts cross-origin AJAX requests. Here&#8217;s what that looks like:</p>
+<!-- Urvanov Syntax Highlighter v2.8.37 -->
+
+		<div id="urvanov-syntax-highlighter-66cd293913ee4357753101" class="urvanov-syntax-highlighter-syntax crayon-theme-classic urvanov-syntax-highlighter-font-monaco urvanov-syntax-highlighter-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button urvanov-syntax-highlighter-nums-button" title="Toggle Line Numbers"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+<div class="crayon-button urvanov-syntax-highlighter-plain-button" title="Toggle Plain Code"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+<div class="crayon-button urvanov-syntax-highlighter-wrap-button" title="Toggle Line Wrap"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+<div class="crayon-button urvanov-syntax-highlighter-expand-button" title="Expand Code"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+<div class="crayon-button urvanov-syntax-highlighter-copy-button" title="Copy"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+<div class="crayon-button urvanov-syntax-highlighter-popup-button" title="Open Code In New Window"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+<span class="crayon-language">Ruby</span>
+</div>
+</div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="urvanov-syntax-highlighter-plain-wrap"><textarea wrap="soft" class="urvanov-syntax-highlighter-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins 'localhost:3000'
+
+    resource '*',
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+end</textarea></div>
+			<div class="urvanov-syntax-highlighter-main">
+				<table class="crayon-table">
+					<tr class="urvanov-syntax-highlighter-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="urvanov-syntax-highlighter-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913ee4357753101-1">1</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913ee4357753101-2">2</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913ee4357753101-3">3</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913ee4357753101-4">4</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913ee4357753101-5">5</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913ee4357753101-6">6</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913ee4357753101-7">7</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913ee4357753101-8">8</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913ee4357753101-9">9</div>
+</div>
+				</td>
+						<td class="urvanov-syntax-highlighter-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913ee4357753101-1">
+<span class="crayon-v">Rails</span><span class="crayon-sy">.</span><span class="crayon-v">application</span><span class="crayon-sy">.</span><span class="crayon-v">config</span><span class="crayon-sy">.</span><span class="crayon-v">middleware</span><span class="crayon-sy">.</span><span class="crayon-v">insert</span><span class="crayon-sy">_</span>before<span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">Rack</span><span class="crayon-o">::</span><span class="crayon-i">Cors</span><span class="crayon-h"> </span><span class="crayon-st">do</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913ee4357753101-2">
+<span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-i">allow</span><span class="crayon-h"> </span><span class="crayon-st">do</span>
+</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913ee4357753101-3">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">origins</span><span class="crayon-h"> </span><span class="crayon-s">'localhost:3000'</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913ee4357753101-4">&nbsp;</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913ee4357753101-5">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">resource</span><span class="crayon-h"> </span><span class="crayon-s">'*'</span><span class="crayon-sy">,</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913ee4357753101-6">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">headers</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-o">:</span><span class="crayon-v">any</span><span class="crayon-sy">,</span>
+</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913ee4357753101-7">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">methods</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-o">:</span><span class="crayon-v">get</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-o">:</span><span class="crayon-v">post</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-o">:</span><span class="crayon-v">put</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-o">:</span><span class="crayon-v">patch</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-o">:</span><span class="crayon-v">delete</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-o">:</span><span class="crayon-v">options</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-o">:</span><span class="crayon-v">head</span><span class="crayon-sy">]</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913ee4357753101-8">
+<span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">end</span>
+</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913ee4357753101-9"><span class="crayon-st">end</span></div>
+</div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0012 seconds] -->
+<p>For context, I run the Rails server on localhost:3001 instead of the default 3000, to leave that open for the React app to use. This particular configuration gives a lot of freedom for the front end to basically make whatever request it wants, and it will be accepted, but it is pretty easy to see that that could be limited in different ways if I wanted to add restrictions, like removing a method, or specifying a resource instead of using a wildcard.</p>
+<p>When I had created the framework for my wpm test, one thing that was bugging me was that I didn&#8217;t have anything to tell me when I had made a mistake. I had decided to only allow submission when the text sample had been copied correctly, and in full &#8211; and that&#8217;s pretty easy to check for when someone clicks the submit button. It&#8217;s a little trickier to tell them ahead of time that they&#8217;ve made a mistake, so they can fix it, know it&#8217;s been fixed, and move on. In React, when someone types into a text-field, there&#8217;s more going on behind the scenes than a regular html page without JavaScript. Each time change is made (a key is pressed) it updates a value which is then immediately rendered back into the text-field so you can see what you typed. When Redux is being used, this value is stored within the app in a place it can&#8217;t even be directly edited. You have to dispatch an action to update the Redux state, and then that gets sent back down to your React component as props, so that you can use that value. It&#8217;s a bit convoluted, but it essentially allows you to have better control over state, and things aren&#8217;t changing around without you being pretty explicit about what you want changed.</p>
+<p>Anyway, whenever you have text input, you&#8217;re going to have a handleOnChange function to make sure that stuff happens. I saw this as the perfect place to add some extra logic to check for correctness, any time the text was changed in the text-field. All told, it looks like this:</p>
+<!-- Urvanov Syntax Highlighter v2.8.37 -->
+
+		<div id="urvanov-syntax-highlighter-66cd293913eeb867259204" class="urvanov-syntax-highlighter-syntax crayon-theme-classic urvanov-syntax-highlighter-font-monaco urvanov-syntax-highlighter-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button urvanov-syntax-highlighter-nums-button" title="Toggle Line Numbers"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+<div class="crayon-button urvanov-syntax-highlighter-plain-button" title="Toggle Plain Code"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+<div class="crayon-button urvanov-syntax-highlighter-wrap-button" title="Toggle Line Wrap"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+<div class="crayon-button urvanov-syntax-highlighter-expand-button" title="Expand Code"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+<div class="crayon-button urvanov-syntax-highlighter-copy-button" title="Copy"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+<div class="crayon-button urvanov-syntax-highlighter-popup-button" title="Open Code In New Window"><div class="urvanov-syntax-highlighter-button-icon"></div></div>
+</div>
+</div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="urvanov-syntax-highlighter-plain-wrap"><textarea wrap="soft" class="urvanov-syntax-highlighter-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+handleOnChange = event =&gt; {
+    const { name, value } = event.target;
+    const currentTestFormData = Object.assign({}, this.props.testFormData, {
+      [name]: value
+    })
+    this.props.updateTestFormData(currentTestFormData)
+    let samplePart = this.state.sampleText.substring(0, currentTestFormData.words.length);
+    if (((currentTestFormData.words !== samplePart) || samplePart.length &gt; currentTestFormData.words.length) &amp;&amp; this.state.correct) {
+      this.setState({
+        correct: false
+      })
+    } else if (!this.state.correct &amp;&amp; currentTestFormData.words === samplePart) {
+      this.setState({
+        correct: true
+      })
+    }
+  }</textarea></div>
+			<div class="urvanov-syntax-highlighter-main">
+				<table class="crayon-table">
+					<tr class="urvanov-syntax-highlighter-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="urvanov-syntax-highlighter-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-1">1</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-2">2</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-3">3</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-4">4</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-5">5</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-6">6</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-7">7</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-8">8</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-9">9</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-10">10</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-11">11</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-12">12</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-13">13</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-14">14</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-15">15</div>
+<div class="crayon-num crayon-striped-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-16">16</div>
+<div class="crayon-num" data-line="urvanov-syntax-highlighter-66cd293913eeb867259204-17">17</div>
+</div>
+				</td>
+						<td class="urvanov-syntax-highlighter-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-1">
+<span class="crayon-v">handleOnChange</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">event</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-2">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-v">name</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-i">value</span><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">target</span><span class="crayon-sy">;</span>
+</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-3">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">currentTestFormData</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">Object</span><span class="crayon-sy">.</span><span class="crayon-e">assign</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">props</span><span class="crayon-sy">.</span><span class="crayon-v">testFormData</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-4">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">[</span><span class="crayon-v">name</span><span class="crayon-sy">]</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">value</span>
+</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-5">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-6">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">props</span><span class="crayon-sy">.</span><span class="crayon-e">updateTestFormData</span><span class="crayon-sy">(</span><span class="crayon-v">currentTestFormData</span><span class="crayon-sy">)</span>
+</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-7">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">samplePart</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">state</span><span class="crayon-sy">.</span><span class="crayon-v">sampleText</span><span class="crayon-sy">.</span><span class="crayon-e">substring</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">currentTestFormData</span><span class="crayon-sy">.</span><span class="crayon-v">words</span><span class="crayon-sy">.</span><span class="crayon-v">length</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-8">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">(</span><span class="crayon-sy">(</span><span class="crayon-v">currentTestFormData</span><span class="crayon-sy">.</span><span class="crayon-v">words</span><span class="crayon-h"> </span><span class="crayon-o">!==</span><span class="crayon-h"> </span><span class="crayon-v">samplePart</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">||</span><span class="crayon-h"> </span><span class="crayon-v">samplePart</span><span class="crayon-sy">.</span><span class="crayon-v">length</span><span class="crayon-h"> </span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">currentTestFormData</span><span class="crayon-sy">.</span><span class="crayon-v">words</span><span class="crayon-sy">.</span><span class="crayon-v">length</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">state</span><span class="crayon-sy">.</span><span class="crayon-v">correct</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span>
+</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-9">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">setState</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-10">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">correct</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">false</span>
+</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-11">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-12">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">state</span><span class="crayon-sy">.</span><span class="crayon-v">correct</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-v">currentTestFormData</span><span class="crayon-sy">.</span><span class="crayon-v">words</span><span class="crayon-h"> </span><span class="crayon-o">===</span><span class="crayon-h"> </span><span class="crayon-v">samplePart</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span>
+</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-13">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">setState</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-14">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">correct</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span>
+</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-15">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-16">
+<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span>
+</div>
+<div class="crayon-line" id="urvanov-syntax-highlighter-66cd293913eeb867259204-17">
+<span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span>
+</div>
+</div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0018 seconds] -->
+<p>Basically, it sees how much as been typed, and checks against the text sample, only up to that point. That way it&#8217;ll only correct you when you get something wrong &#8211; rather than telling you it&#8217;s wrong simply because you haven&#8217;t finished typing (Some web forms do this by default, and it&#8217;s so frustrating as a user!!!). You may have noticed that it&#8217;s just storing this correctness boolean directly in the component&#8217;s state. I have no need to keep this in the React state &#8211; it&#8217;s just an isolated quick check, which ultimately dictates whether CSS will be used to turn the text red or not. Nothing else will use that information, and I didn&#8217;t want to add unnecessary functions to store it in an application-wide state and have to retrieve it again.</p>
+<p>I learned that it&#8217;s generally a good idea to use Redux to store information in state, but that it&#8217;s also ok to have state stored in components sometimes. It can depend on convenience, and how you want things to be organized.</p>
+<p>This project was a lot of fun. I started out a bit worried about its complexity, but it turned out simpler than I expected. I could of course, at some point add complexity to it, like making user profiles that store their scores, rather than just anonymous submissions for teams. I look forward to expanding my knowledge and experience using React and Redux &#8211; my next project will probably involve using an 3rd party API &#8211; that way I can have access to more interesting existing data, and focus on creating an even more polished front-end with more features.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+<h3 class="sd-title">Share this:</h3>
+<div class="sd-content"><ul>
+<li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-90" class="share-twitter sd-button share-icon no-text" href="/made-react-app-rails-api/?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li>
+<li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-90" class="share-facebook sd-button share-icon no-text" href="/made-react-app-rails-api/?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li>
+<li class="share-end">
+</ul></div>
+</div></div>					</div>
+<!-- .post-content -->
+					
+										
+						<div class="post-meta bottom">
+										
+														
+								<p><span class="fa fw fa-folder"></span><a href="/category/programming/" rel="category tag">Programming</a></p>
+							
+														
+														
+						</div>
+<!-- .post-meta.bottom -->
+					
+						<div class="post-navigation group">
+						
+															<a class="prev-post" href="/processing-data-react/">
+									<p>Previous Post</p>
+									<h4>Processing Data in React</h4>
+								</a>
+														
+															<a class="next-post" href="/made-jquery-front-end-rails-app/">
+									<p>Next Post</p>
+									<h4>I made a jQuery front-end for my Rails app</h4>
+								</a>
+							
+						</div>
+<!-- .post-navigation -->
+
+									
+				</div>
+<!-- .post -->
+																				
+						
+	</div>
+<!-- .section-inner -->
+	
+</div>
+<!-- .content -->
+
+
+	<div class="comments-section section">
+		
+		<div class="section-inner">
+								
+					
+		</div>
+<!-- .section-inner --> 
+
+	</div>
+<!-- .comments-section -->
+
+		
+</main><!-- #site-content -->
+
+<footer class="section footer bg-accent">
+	
+	<div class="section-inner">
+		
+		<p class="copyright">&copy; 2024 <a href="/">Morgan VanYperen</a></p>
+				 
+		<p class="credits">Theme by <a href="https://andersnoren.se/">Anders Nor&eacute;n</a></p>
+		
+		<a href="#" class="to-the-top"><span class="fa fw fa-arrow-up"></span><span class="screen-reader-text">Go back to the top</span></a>
+				
+	</div>
+<!-- .section-inner -->
+	
+</footer><!-- .footer.section -->
+
+
+	<script type="text/javascript">window.WPCOM_sharing_counts = {"\/made-react-app-rails-api\/":90};</script>
+				<script type="text/javascript" src="/wp-content/themes/iwata/assets/js/global.js?ver=2.1.1" id="iwata_global-js"></script>
+<script type="text/javascript" src="/wp-includes/js/comment-reply.min.js?ver=6.6.1" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="text/javascript" src="https://stats.wp.com/e-202435.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"94917895\",\"post\":\"90\",\"tz\":\"-8\",\"srv\":\"localhost\"}") ]);
+_stq.push([ "clickTrackerInit", "94917895", "90" ]);
+/* ]]> */
+</script>
+<script type="text/javascript" id="sharing-js-js-extra">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=13.7" id="sharing-js-js"></script>
+<script type="text/javascript" id="sharing-js-js-after">
+/* <![CDATA[ */
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+/* ]]> */
+</script>
+
+</body>
+</html>

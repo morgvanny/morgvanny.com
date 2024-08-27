@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Morgan VanYperen</title>
+	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>this is a blog by Morgan VanYperen</description>
+	<lastBuildDate>Wed, 07 Jun 2023 18:24:03 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.1</generator>
+	<item>
+		<title>Securing Your Session Key in Flask</title>
+		<link>/securing-your-session-key-in-flask/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2023 18:18:17 +0000</pubDate>
+				<category><![CDATA[Programming]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=390</guid>
+
+					<description><![CDATA[<p>If you&#8217;re using sessions in your Flask application, you may have started off with a simple default configuration, setting up the session secret for the app. It may look something like this:app.secret_key =...</p>
+<p>The post <a href="/securing-your-session-key-in-flask/">Securing Your Session Key in Flask</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>If you&#8217;re using sessions in your Flask application, you may have started off with a simple default configuration, setting up the session secret for the app. It may look something like this:<br><code>app.secret_key = b'Y\xf1Xz\x00\xad|eQ\x80t \xca\x1a\x10K'</code></p>
+
+
+
+<p>This is perfectly fine in a development environment, where you have no concern for hackers trying to manipulate sessions. However, when you deploy your site, if this key is publicly available anywhere (like github) then hackers would have the ability to use that key to create their own session cookies with valid signatures, without having to get them from your server. That means, among other potential security concerns, they could set their own data into the session &#8211; which is often used for user authentication. You don&#8217;t want people to be able to set whatever user id they want in their session, because that allows them to bypass the login and pretend to be anyone they want!<br><br>Therefore, any time you deploy a Flask app using sessions, you need a way to hide the session key. While there are various ways to do this, my preference is to use the python-dotenv package. Here are the steps:<br><br>1. Run <code>pipenv install python-dotenv</code><br>2. In your .gitignore file at the top level of the project, add a line saying <code>.env</code><br>3. Run <code>python -c 'import secrets; print(secrets.token_hex())'</code> in your terminal, and copy the result. This will be your secret key!<br>4. Create a file called .env in your flask server directory<br>5. In that file, put <code>SECRET_KEY=</code> and then paste the key you copied from the terminal. No spaces or quotes necessary. An example may look like <code>SECRET_KEY=6050fb1f5f3d35b14484718c447b1424375a6bbd39150701c0ffb5db506eadb2</code><br>6. In whichever file <code>app.secret_key</code> is being set (could likely be app.py or config.py) add <code>from os import environ</code> and <code>from dotenv import load_dotenv</code><br>7. Before your secret key is set, add this line <code>load_dotenv('.env')</code><br>8. Finally, change the original line that was setting the secret key to <code>app.secret_key = environ.get('SECRET_KEY')</code><br><br>When you start your server up, it will now load variables from the .env file into your environment, so that last line can pull the value out and use it for the secret_key every time! The only problem remaining is that usually when you deploy your application, you&#8217;ll be doing so with git &#8211; which is ignoring the .env file. Wherever you&#8217;re hosting your site, they will have other ways to set environment files though &#8211; either through running some commands in a terminal &#8211; or very often they have a place on their site allowing you to do some server configuration. All you need to do is set up a key called SECRET_KEY with a secret key value. It&#8217;s probably fine to use the same one in your .env file, but there&#8217;s no particular reason they need to be the same in production, and often it&#8217;s probably a better idea to generate a new one for the production server to use.<br><br><strong>Note</strong><br>If collaborating with others on a git repo, only 1 person needs to do all these steps &#8211; except for the creation of the .env file and setting the SECRET_KEY value in that file. Each person will have to make their own. It doesn&#8217;t matter if you all use the same key or not because your servers and session cookies will all be independent of each other during development anyway. Also &#8211; when other people do pull these changes &#8211; they will need to re-run <code>pipenv install</code> in order to get the new dependency that was added.<br><br><strong>Final Note</strong><br>As you were following along you may have intuited that this technique can be used for other secret keys as well &#8211; like a 3rd party API private key. That&#8217;s right! All you have to do is add more lines to your .env file with the same sort of syntax as before, just different key names. Then in your application, you can use <code>environ.get('WHATEVER_KEY_YOU_WANT')</code> to access the value stored there. Similarly, you&#8217;d need to set up an environment variable wherever you deploy, using their settings or whatever method they recommend.</p>
+<p>The post <a href="/securing-your-session-key-in-flask/">Securing Your Session Key in Flask</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">390</post-id>	</item>
+		<item>
+		<title>Node Arguments</title>
+		<link>/node-arguments/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Tue, 19 Dec 2017 07:42:29 +0000</pubDate>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programming]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=139</guid>
+
+					<description><![CDATA[<p>Something new I learned this week was about how arguments are passed into Node programs from the command line. This was a principle I learned a lot about in a coding challenge I...</p>
+<p>The post <a href="/node-arguments/">Node Arguments</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Something new I learned this week was about how arguments are passed into Node programs from the command line. This was a principle I learned a lot about in a coding challenge I did a while back, but in several other languages. Being more familiar with JavaScript, and having already learned how to do it in a few different (but similar) ways, I was able to pick it up pretty easily.</p>
+<p>All you need, in order to use command line arguments in Node, is process.argv. That is an array, and it&#8217;s really important to remember that the first 2 elements will have nothing to do with your elements! They actually can differ/depend on your machine, and where the file is located on your hard drive. They can be useful in certain contexts, but when we talk about CLI arguments, we are talking about every element that comes after those 2. Often, you can call process.argv.shift() twice, to get rid of those, and you&#8217;re left with just an array of elements in process.argv. Then you can do as you please with those arguments within the program!</p>
+<p>This sort of thing is very helpful because it allows you to dynamically give values to the program without having to save them into any files anywhere. You simply state the values when you execute the program. If you have a long list of arguments you want to supply, it of course makes sense to include those in a file or database, which is then supplied as an argument, or hard-coded for the program to reference specifically &#8211; but that&#8217;s a discussion for another day! I&#8217;m still in early stages of learning node, and I am ultimately focused on using it in the context of web server functionality. This is just a neat thing I learned, that may come in handy sometime!</p>
+<p>The post <a href="/node-arguments/">Node Arguments</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">139</post-id>	</item>
+		<item>
+		<title>React Just Got Better (Again)</title>
+		<link>/react-just-got-better/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Tue, 05 Dec 2017 01:44:40 +0000</pubDate>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programming]]></category>
+		<category><![CDATA[React]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=127</guid>
+
+					<description><![CDATA[<p>Last week I wrote about my favorite change that came with React version 16 &#8211; fragment support in components. I had mentioned that there were still annoying things about it, which required workarounds,...</p>
+<p>The post <a href="/react-just-got-better/">React Just Got Better (Again)</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Last week I wrote about my favorite change that came with React version 16 &#8211; fragment support in components. I had mentioned that there were still annoying things about it, which required workarounds, or ignoring warnings. As if on queue, they put out an update the next day that fixed that! Clearly they read my blog, and care about my priorities. Thanks guys.</p>
+<p>They explain the change very well <a href="https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html">here</a>. Basically, instead of putting everything into brackets as an array with commas between elements, you can now just wrap it all in what appears to be an html tag, indicating it&#8217;s a fragment. Basically, syntax is almost exactly like it was before fragments existed, but it&#8217;s not an extra div, or whatever you chose to use in the past. They have a few ways to indicate it&#8217;s a fragment, but my favorite is simply &lt;&gt; putting things within blank tags, like this &lt;/&gt;.</p>
+<p>This is really interesting to me, because while I haven&#8217;t looked into how exactly they made this work, I&#8217;m pretty sure it works about the same way as when they supported arrays &#8211; they just abstracted away a lot of the code you need to write to indicate how the fragment should be put together. In any case, I like it a lot. While it&#8217;s not anything groundbreaking, it just feels right. It&#8217;s the way things should work. So to you React devs at Facebook who definitely read my blog (lol), I am proud of you. Thanks for all you do!</p>
+<p>The post <a href="/react-just-got-better/">React Just Got Better (Again)</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">127</post-id>	</item>
+		<item>
+		<title>My Favorite React 16 Change</title>
+		<link>/favorite-react-16-change/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Tue, 28 Nov 2017 06:24:07 +0000</pubDate>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programming]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=125</guid>
+
+					<description><![CDATA[<p>React 16.0 came out back in September. Old news, right? But when it came out so long, long ago, they made a really nice change, in my opinion. You can return an array...</p>
+<p>The post <a href="/favorite-react-16-change/">My Favorite React 16 Change</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>React 16.0 came out back in September. Old news, right? But when it came out so long, long ago, they made a really nice change, in my opinion. You can return an array of elements from a component&#8217;s render method!</p>
+
+
+
+<p>One thing that bugged me a bit when learning React, was that when you&#8217;re writing JSX, you can&#8217;t simply return a set of elements. For example, when writing html, the following sort of structure might be typical to see within the body of a document:</p>
+
+
+
+<div class="wp-block-urvanov-syntax-highlighter-code-block"></div>
+
+
+
+<div class="wp-block-urvanov-syntax-highlighter-code-block"><pre class="urvanov-syntax-highlighter-plain-tag">&lt;h1&gt;Title&lt;/h1&gt;
+&lt;h4&gt;Subtitle&lt;/h4&gt;
+&lt;p&gt;Some text&lt;/p&gt;
+&lt;p&gt;More text&lt;/p&gt;
+&lt;img src="image.jpeg" alt="image description" /&gt;
+&lt;p&gt;Even more text&lt;/p&gt;</pre></div>
+
+
+
+<p>So when you&#8217;re writing a component, and want it to spit that out, it seems intuitive to just create those tags, and write it as shown above. But you weren&#8217;t allowed to do that! You had to wrap it all into a div, or span, or some kind of package. That&#8217;s very trivial to do, but at the same time, it&#8217;s annoying! I don&#8217;t necessarily want to enclose a bunch of stuff into otherwise unnecessary tags. It makes things more messy than they should be in the end, and there&#8217;s often no good reason for elements to be wrapped like that.</p>
+
+
+
+<p>Thankfully, we can now return fragments! Simply wrap the JSX in brackets, and return an array of elements. So instead of throwing it all into a div, which seems more like a workaround to force it to all be technically one element, you simply add some brackets, and place commas between the arrays, indicating that you want to return each of those elements &#8211; the actual stuff you want.</p>
+
+
+
+<p>The tricky thing right now is, you get a console warning, unless you assign each element a key. This has to do with how React handles arrays, and what it needs in order to identify changes or removals. For fragments in particular, it actually shouldn&#8217;t matter, but the warning will still appear unless keys are added. This isn&#8217;t so convenient, but I still like where it&#8217;s going &#8211; and the react developers said they&#8217;ll add a special fragment syntax to JSX so it doesn&#8217;t require keys. I&#8217;m looking forward to that!</p>
+<p>The post <a href="/favorite-react-16-change/">My Favorite React 16 Change</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">125</post-id>	</item>
+		<item>
+		<title>Java Challenge</title>
+		<link>/java-challenge/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Mon, 13 Nov 2017 22:45:32 +0000</pubDate>
+				<category><![CDATA[Programming]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=117</guid>
+
+					<description><![CDATA[<p>My latest coding challenge was in Java. It was even trickier than my last challenge, because this time I needed to include automated tests. I love having automated testing to run as I...</p>
+<p>The post <a href="/java-challenge/">Java Challenge</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>My latest coding challenge was in Java. It was even trickier than my last challenge, because this time I needed to include automated tests.</p>
+<p>I love having automated testing to run as I write code, so I can pass the tests, and check off the boxes. Who doesn&#8217;t?! The hard part is having the discipline and the know-how to write those tests in the first place.</p>
+<p>It&#8217;s been a very long time since I&#8217;ve programmed in Java at all &#8211; long before ever thought about automated testing &#8211; or even knew about Test Driven Development as a concept. So it took me some time to learn about junit, and how to write unit tests in Java.</p>
+<p><a href="https://github.com/junit-team/junit4/wiki/getting-started">This github page</a> has a very nice, succinct example of how to test a basic class in Java. It was actually extremely helpful to look at and emulate that pattern. While my tests probably could be better in a lot of ways, I was able to get them working properly, and then write all the code I needed in order to pass them. I really look forward to getting feedback on this challenge, because I want to get better and faster at writing good tests. It will make me a much better and disciplined developer!</p>
+<p>The post <a href="/java-challenge/">Java Challenge</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">117</post-id>	</item>
+		<item>
+		<title>Headless WordPress</title>
+		<link>/headless-wordpress/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Tue, 07 Nov 2017 04:43:01 +0000</pubDate>
+				<category><![CDATA[Programming]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=112</guid>
+
+					<description><![CDATA[<p>An open source project I&#8217;ve been really interested in, and trying to help with, is headless-wp-starter. The idea behind it, is that you can use the mature, easy to use, back-end WordPress provides, but...</p>
+<p>The post <a href="/headless-wordpress/">Headless WordPress</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>An open source project I&#8217;ve been really interested in, and trying to help with, is <a href="https://github.com/postlight/headless-wp-starterstarter" target="_blank" rel="noopener">headless-wp-starter</a>. The idea behind it, is that you can use the mature, easy to use, back-end WordPress provides, but have the freedom to completely design and control the front-end using React, and connect them with WordPress&#8217;s built-in API. This technique is on the rise, because decoupling the two allows you to separate concerns more easily, and React is an amazing and flexible framework that many front-end developers are adopting quickly.</p>
+<p>The problem is, it can take a lot of work to set this sort of thing up. It&#8217;s definitely not a standard practice for WordPress users. I found <a href="https://dev.to/jchiatt/headless-wordpress-with-react">this post</a>, which has tips on getting started. It has a lot of valuable info, but it will only get you so far. There are a lot of tricky things that can come up, like figuring out the routing of pages &#8211; especially if you want to render javascript server-side &#8211; and authentication within the front-end application. The purpose of this project is to create a starter kit for developers, so they can download this, run a few commands, and be up and running with a headless WordPress + React setup. The hope is that these tricky problems will be solved, and you can focus more purely on designing the front-end, and putting together the WordPress back-end, without having to worry too much about how they connect.</p>
+<p>So when I came across the project, some of these problems had already been solved on a basic level &#8211; however page routing and authentication are still not set up. That&#8217;s what I&#8217;m trying to help with now. It&#8217;s set up to use next.js, which I was not yet familiar with, and have been learning. As I learned that, I realized in order to dynamically generate pages and posts, it&#8217;s going to be a good idea for us to add Express to the project &#8211; something else I haven&#8217;t learned to use yet! However, I&#8217;ve been reading, and learning about it.</p>
+<p>At this point, I&#8217;ve been able to add Express, and create a new route for posts. I created a route that looks like /post/:post_slug: which will dynamically handle links to individual posts, and then be able to fetch the post info from the server. It&#8217;s totally up to the developer to actually design how that data will be displayed, but it&#8217;s nice to have a boiler-plate that will do the basics for you. Talking with the project owner, we decided we want to make the routes mimic the permalink structure the WordPress back-end is set to use, but for now we just want to set up workable routes period, and then we can iteratively make progress to improve the routing structure, and make the front-end and back-end routing congruent. This has been a really fun, and productive learning experience!</p>
+<p>The post <a href="/headless-wordpress/">Headless WordPress</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">112</post-id>	</item>
+		<item>
+		<title>Haskell, Rust, Python, Swift</title>
+		<link>/haskell-rust-python-swift/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Tue, 31 Oct 2017 04:15:56 +0000</pubDate>
+				<category><![CDATA[Programming]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=108</guid>
+
+					<description><![CDATA[<p>In my job search, I was issued a coding challenge last week, and needed to learn the basics of several languages I&#8217;m not familiar with. I&#8217;m not sure they use some of those...</p>
+<p>The post <a href="/haskell-rust-python-swift/">Haskell, Rust, Python, Swift</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>In my job search, I was issued a coding challenge last week, and needed to learn the basics of several languages I&#8217;m not familiar with. I&#8217;m not sure they use some of those regularly on the job &#8211; seems they just wanted to see if I could flexibly catch on.</p>
+<p>The challenges themselves were very easy to solve. The first one was a slightly modified FizzBuzz challenge in Haskell, and the second one was spotting palindromes, and sorting text, in each of the other 3 languages.</p>
+<p>One thing that stuck out to me was the differences/similarities of taking a file path as a command line argument in Rust, Python, and Swift.</p>
+<p>In Rust, you need std::env, std::fs::File, and std::fs::BufReader. Then you can grab your arguments and put them into an array, and then select the path from the array, open the file, and read it, like this:</p><pre class="urvanov-syntax-highlighter-plain-tag">let args: Vec&lt;_&gt; = env::args().collect();
+let filepath = &amp;args[1];
+let f = File::open(filepath).unwrap();
+let file = BufReader::new(&amp;f);</pre><p>In Python you only need to import sys, and you can do the following:</p><pre class="urvanov-syntax-highlighter-plain-tag">filepath = sys.argv[1]
+with open(filepath) as fp:
+    for num, line in enumerate(fp):</pre><p>Then under that, you can say what you want to do for each line in that file. I implemented the same behavior in Rust, but took more code than I showed in the above example. In Python, it&#8217;s much simpler, so it&#8217;s included here.</p>
+<p>Finally, in Swift, it&#8217;s somewhere in between. I did the following to collect the argument I wanted:</p><pre class="urvanov-syntax-highlighter-plain-tag">private let arguments: [String]
+
+public init(arguments: [String] = CommandLine.arguments) { 
+    self.arguments = arguments
+}</pre><p>Then within a public func, I had this:</p><pre class="urvanov-syntax-highlighter-plain-tag">let fileName = arguments[1]
+    do {
+        let contents = try NSString(contentsOfFile: fileName,
+            encoding: String.Encoding.ascii.rawValue)
+            
+            contents.enumerateLines({ (line, stop) -&gt; () in
+                *CODE FOR EACH LINE HERE*
+         })
+        }</pre><p>It took a bit of time to figure out the ins and outs of how to do this in each language, but lucky for me, reading individual lines from a file is pretty commonly done in all languages. I was able to read a lot of explanations on how other people have done it, and why they did it that way. No one I saw was trying to do the same thing I was, but reading lines from a file can be pretty universal! I&#8217;m glad for all the great documentation online &#8211; especially when learning to use a new programming language.</p>
+<p>The post <a href="/haskell-rust-python-swift/">Haskell, Rust, Python, Swift</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">108</post-id>	</item>
+		<item>
+		<title>Contributing to Open Source Pt 2</title>
+		<link>/contributing-open-source-pt-2/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Mon, 23 Oct 2017 23:48:13 +0000</pubDate>
+				<category><![CDATA[Programming]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=105</guid>
+
+					<description><![CDATA[<p>My last post was about the things I&#8217;ve been learning, in order to be a good open source contributor. One major thing I left out about preparing to contribute a project is to...</p>
+<p>The post <a href="/contributing-open-source-pt-2/">Contributing to Open Source Pt 2</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>My last post was about the things I&#8217;ve been learning, in order to be a good open source contributor. One major thing I left out about preparing to contribute a project is to read the Issues section on GitHub!  The more time you spend using GitHub, the more obvious this becomes &#8211; it&#8217;s where a lot of the project coordination occurs for open source projects. For people new to open source, like me, it&#8217;s especially important to read the issues that are there.</p>
+<p>There are a lot of good reasons to read the issues. Unless you&#8217;re an avid user of the software being developed, or are already pretty invested in it, you probably have no idea where to start, as far as contributing. The issues are often going to frame nicely what people want to have happen, or what bugs need to be fixed, and can often even give you a better vision of the project overall &#8211; where it is now &#8211; and where people want it to be.</p>
+<p>Another reason is, there may be bugs to be fixed, or features to be added, that people have already discussed in depth, or recently volunteered to fix. Sometimes people volunteer, and never get around to things, but it&#8217;s still good to have an idea so you don&#8217;t do a bunch of work &#8211; only to find that it&#8217;s redundant by the time you can submit a pull request. Sometimes issues are flagged, asking for volunteers or suggestions.</p>
+<p>One of the other great reasons to read issues is that it can be the easiest way to start contributing! Whether you create an issue on your own, or reply to existing one&#8217;s, you can often provide helpful suggestions, or ask questions that help narrow down the path for next steps in development. I&#8217;m learning more and more that software development is often not really specifically about code. A lot of it is decision-making and collaboration.</p>
+<p>For people looking into contributing to open source &#8211; it often makes no sense to &#8220;barge&#8221; into a project and throw code at it before you really know what&#8217;s going on. Get involved in the conversation! If the Issues tab is dead, you can still glean info from the readme, or contact the owner of the repository, or active contributors &#8211; or create an issue yourself! I&#8217;m enjoying learning more about open source development, and will write more about it soon.</p>
+<p>The post <a href="/contributing-open-source-pt-2/">Contributing to Open Source Pt 2</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">105</post-id>	</item>
+		<item>
+		<title>Contributing to Open Source</title>
+		<link>/contributing-open-source/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Mon, 16 Oct 2017 23:54:42 +0000</pubDate>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programming]]></category>
+		<category><![CDATA[React]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=103</guid>
+
+					<description><![CDATA[<p>I&#8217;ve been spending time lately, improving my skills in order to be able to make meaningful contributions to open source projects. One thing I&#8217;m trying to get better at is having better git...</p>
+<p>The post <a href="/contributing-open-source/">Contributing to Open Source</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve been spending time lately, improving my skills in order to be able to make meaningful contributions to open source projects. One thing I&#8217;m trying to get better at is having better git commit messages. I recommend <a href="https://chris.beams.io/posts/git-commit/">this excellent post</a> on writing descriptive, yet brief git commit messages. It really gets into nitty-gritty details on what makes a message good, or how bad ones can be improved.</p>
+<p>In addition to trying to generally improve the notes around my code, I also of course have to learn to code better. The project I found, that I&#8217;m working on contributing to, involves combining React and WordPress together in a pretty unique way. I have an understanding of React, and of WordPress, but I&#8217;ve never used WordPress exclusively as an API before, and I&#8217;ve never used Next.js either. Lucky for me, there is a lot of beginner documentation out there for both &#8211; and this project is still in its infancy &#8211; so there are plenty of basic things to add!</p>
+<p>To begin my process, I simply cloned the github repository, and followed the readme&#8217;s instructions for installing dependencies and launching the site in a local environment. Then I opened up the project in my text editor of choice (vscode right now) and looked it over. While I haven&#8217;t used Next.js before, everything for the front-end looked pretty familiar and intuitive based on my experience with React. I familiarized myself with the file structure, and where code and/or libraries were being imported and exported. The WordPress folder was of course, very familiar to me from my time working at Bluehost. Nothing new there.</p>
+<p>As I saw how routing was working on the front-end, I knew I&#8217;d need to study more about Next.js if I want to help add components to display pages and posts. That seemed the most obvious thing to add at this point, but it was still unclear to me how to build that out. <a href="https://learnnextjs.com/">Here is where</a> I went to learn to how Next.js works, and how I can add to the project. It&#8217;s really nice because it even has a section for creating dynamic pages &#8211; exactly what I want to be able to do when creating a custom react front-end for WordPress. Now that I have a pretty good understanding of how that works, I should be able to get started following that pattern, and document my work properly with git commit messages. The next tricky part is figuring out what urls to use to fetch the data from WordPress, and make sure the links all work properly. More on this to come.</p>
+<p>The post <a href="/contributing-open-source/">Contributing to Open Source</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">103</post-id>	</item>
+		<item>
+		<title>Processing Data in React</title>
+		<link>/processing-data-react/</link>
+		
+		<dc:creator><![CDATA[morgvanny]]></dc:creator>
+		<pubDate>Tue, 10 Oct 2017 07:15:43 +0000</pubDate>
+				<category><![CDATA[Programming]]></category>
+		<guid isPermaLink="false">https://morgvanny.com/?p=100</guid>
+
+					<description><![CDATA[<p>During my last React project, I needed to process some data that I had fetched from my API. Since I was testing wpm, I wanted to have a stats page, showing information about...</p>
+<p>The post <a href="/processing-data-react/">Processing Data in React</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>During my last React project, I needed to process some data that I had fetched from my API. Since I was testing wpm, I wanted to have a stats page, showing information about the results from all the tests taken. In order to show this info, I needed to make a decision. Do I put all the logic into the API, so the front-end can simply take the exact data and display it? Or do I fetch raw data from the server, and then process that data within React, and then display it?</p>
+<p>Well, if you read the title of this post, I guess it&#8217;s pretty obvious which I decided. There was no huge reason I chose to do it that way &#8211; I just figured since I was focused on developing in React, I might as well let it handle some of the logic &#8211; and I wanted to keep requests to the server simple. It&#8217;s also nice to offload calculations to be done client-side I guess, if it&#8217;s non-essential for the server to do it. I don&#8217;t think that matters much in this case though.</p>
+<p>Anyway, having decided to process the data in React, I still had to decide when and where it made sense to do that. When someone visits the stats route, a few possibilities come to mind for where I can include the data processing logic. I can put it into the componentDidMount() function. This is where asynchronous requests often go &#8211; it allows for the page to load &#8211; while it does its thing in the background. It&#8217;s common to put a fetch there &#8211; that way the screen doesn&#8217;t hang while it waits for a server response. This isn&#8217;t a bad place for it, but something seems off. I&#8217;d have to either set up a local state that I update with the information I fetched, or I&#8217;d need to set up a new action/reducer to update my redux store with the stats I want to receive into the component as props.</p>
+<p>Since I know I want to end up with the stats in either my local state, or better yet, my global redux state, passed down as props, it makes more sense to process my data within my mapStateToProps() function. Since I already have the infrastructure in place for fetching the test results and passing them down as props in that function, all I have to do is add some logic there that will handle the calculations and sorting of that data. Then I can just define new props there, and pass them into the component &#8211; keeping it as dumb as possible! That means I get to have a component that has all the info it needs handed to it as simple props, and all it has to do is make it pretty and display it on the page.</p>
+<p>After talking with a few other developers about this, and showing them my code, I&#8217;m pretty confident I made the right choices on this. Something that was interesting to me was that in a few cases, it didn&#8217;t matter <em>that</em> much what choice I made &#8211; it was more a matter of convenience, or preference. However, I think it&#8217;s still important to be thoughtful about these sorts of things, in order to make my code intuitive, and to adhere to common practices wherever I can. I think this will make it easier to jump into existing projects I&#8217;m not familiar with, and set up my own projects in ways that other people will be able to collaborate on if they want.</p>
+<p>The post <a href="/processing-data-react/">Processing Data in React</a> appeared first on <a href="">Morgan VanYperen</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">100</post-id>	</item>
+	</channel>
+</rss>
